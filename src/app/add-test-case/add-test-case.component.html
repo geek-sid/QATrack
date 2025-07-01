@@ -1,0 +1,57 @@
+<div mat-dialog-title class="text-left pl-4 border_bottom  primary dialog-title">
+    Test Case
+    <button (click)="closeDialog()" class="btn-icon close">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<mat-dialog-content class="m-0 p-4">
+    <div>
+        <form [formGroup]="testCaseForm">
+            <div class="fieldBox">
+                <label>Title</label><br>
+                <input formControlName="title" class="form-control" type="text" maxlength="500">
+            </div>
+            <div class="fieldBox">
+                <label for="priorities">Priority</label><br>
+                <select formControlName="priority" mat-select class="form-control form-select" name="priorities" id="priorities">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <div class="fieldBox">
+                <label for="type">Type</label><br>
+                <select formControlName="type" mat-select class="form-control form-select " name="type" id="type">
+                    <option value="UI">UI</option>
+                    <option value="Functional">Functional</option>
+                    <option value="API">API</option>
+                </select>
+            </div>
+            <div class="fieldBox">
+                <label for="ownerslist">Owner</label><br>
+                <select formControlName="owner" mat-select class="form-control form-select" name="ownerslist" id="ownerslist">
+                    <option value="Amit Kumar">Amit Kumar</option>
+                    <option value="Amol Pardhe">Amol Pardhe</option>
+                    <option value="Sunil Kumar">Sunil Kumar</option>
+                </select>
+            </div>
+            <div class="fieldBox">
+                <label>Pre Condition</label><br>
+                <textarea formControlName="precondition" class="form-control" type="text" maxlength="50000"></textarea>
+            </div>
+
+            <div class="fieldBox">
+                <label>Steps</label><br>
+                <textarea formControlName="steps" type="text" class="form-control" maxlength="50000"></textarea>
+            </div>
+            <footer>
+                <div class="d-flex justify-content-end mt-3 mr-0">
+                   
+                        <button mat-flat-button  (click)="closeDialog()" class="btn btn-dark mr-2">Close</button>
+                        <button mat-flat-button  (click)="addTestCase()" class="btn btn-primary">{{addbuttonLabel}}</button>
+                   
+                </div>
+            </footer>
+        </form>
+    </div>
+</mat-dialog-content>

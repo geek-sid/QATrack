@@ -1,0 +1,44 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+table {
+  width: 100%;
+}
+.example-button-container {
+  display: flex;
+  justify-content: left;
+  padding: 1rem 1rem;
+}
+
+button{
+  margin: 0rem 1rem;
+}
+
+.edit{
+  color:blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+::ng-deep .mat-table{
+  background-color: rgba(255,255,255,0.5);
+  opacity: 0.8;
+  width: 95%;
+  margin: auto;
+  .mat-header-row{
+       color: white !important;
+       background-color: #000;
+       opacity: 1;
+       .mat-header-cell{
+        color: #fff;
+       }
+     }
+     
+}
+::ng-deep .mat-checkbox-checked{
+  
+  .mat-checkbox-layout{
+    background-color: blue !important;
+    
+     }
+  
+}
