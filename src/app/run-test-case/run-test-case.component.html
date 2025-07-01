@@ -1,0 +1,58 @@
+<div mat-dialog-title class="text-left pl-4 border_bottom  primary dialog-title">
+    Run Test Case
+    <button (click)="closeDialog()" class="btn-icon close">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<mat-dialog-content class="m-0 p-4">
+    <div>
+        <form [formGroup]="testCaseForm">
+            <div class="fieldBox">
+                <label>Title</label><br>
+                <input formControlName="title" class="form-control" [disabled]="true" type="text" maxlength="500">
+            </div>
+
+            <div class="fieldBox">
+                <label for="ownerslist">Assigned To</label><br>
+                <select formControlName="owner" name="ownerslist" mat-select class="form-control" id="ownerslist">
+                    <option value="Amit Kumar">Amit Kumar</option>
+                    <option value="Amol Pardhe">Amol Pardhe</option>
+                    <option value="Sunil Kumar">Sunil Kumar</option>
+                </select>
+            </div>
+            <div class="fieldBox">
+                <label>Pre Condition</label><br>
+                <textarea formControlName="precondition" [disabled]="true" type="text" class="form-control" maxlength="50000"></textarea>
+            </div>
+
+            <div class="fieldBox">
+                <label>Steps</label><br>
+                <textarea formControlName="steps" type="text" [disabled]="true" class="form-control" maxlength="50000"></textarea>
+            </div>
+            <div class="fieldBox">
+                <label>Result Information</label><br>
+                <textarea formControlName="resultInformation" class="form-control"  type="text" maxlength="50000"></textarea>
+            </div>
+            <div class="fieldBox">
+                <label for="statusList">Status</label><br>
+                <select formControlName="lastResults" class="form-control form-select " mat-select name="statusList" id="statusList">
+                    <option value="Not Run">Not Run</option>
+                    <option value="Passed">Passed</option>
+                    <option value="Failed">Failed</option>
+                    <option value="Skipped">Skipped</option>
+                    <option value="Blocked">Blocked</option>
+                </select>
+            </div>
+            <footer>
+                <div class="d-flex justify-content-end mt-3">
+                   
+                        <button mat-flat-button (click)="closeDialog()"
+                        class="btn btn-dark mr-2">Close</button>
+                        <button mat-flat-button (click)="addTestCase()"
+                        class="btn btn-primary mr-2">{{addbuttonLabel}}</button>
+                   
+                </div>
+            </footer>
+        </form>
+    </div>
+</mat-dialog-content>
